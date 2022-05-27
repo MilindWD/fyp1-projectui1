@@ -9,12 +9,14 @@ import {Col, Container, Dropdown, Row} from 'react-bootstrap';
 
 import {
   LineChart,
+  BarChart,
   Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
+  Bar
 } from "recharts";
 import getData from "./data";
 
@@ -89,7 +91,8 @@ export default function App() {
       </div>
     </Container>
     
-    <Container style={{height: '50vh', paddingTop: '10%'}} className="d-flex align-items-center justify-content-center text-center not-found-container"><LineChart
+    <Container style={{height: '50vh', paddingTop: '10%'}} className="d-flex align-items-center justify-content-center text-center not-found-container">
+    <BarChart
     width={800}
     height={400}
     data={data}
@@ -105,18 +108,19 @@ export default function App() {
     <YAxis stroke="white"/>
     <Tooltip />
     <Legend />
-    {model!=='All'&&dataSet!=='All'?<><Line type="monotone" dataKey="accuracy" stroke="#82ca9d" />
-    <Line type="monotone" dataKey="f1" stroke="red" />
-    <Line type="monotone" dataKey="precision" stroke="yellow" />
-    <Line type="monotone" dataKey="recall" stroke="white" /></>:<><Line type="monotone" dataKey="Bag of Words" stroke="#82ca9d" />
-    <Line type="monotone" dataKey="tfidf" stroke="red" />
-    <Line type="monotone" dataKey="GloVe" stroke="yellow" />
-    <Line type="monotone" dataKey="Word2Vec" stroke="white" />
-    <Line type="monotone" dataKey="LSTM" stroke="orange" />
+    {model!=='All'&&dataSet!=='All'?<><Bar type="monotone" dataKey="accuracy" fill="#82ca9d" />
+    <Bar type="monotone" dataKey="f1" fill="red" />
+    <Bar type="monotone" dataKey="precision" fill="yellow" />
+    <Bar type="monotone" dataKey="recall" fill="white" /></>:<>
+    <Bar type="monotone" dataKey="Bag of Words" fill="#82ca9d" />
+    <Bar type="monotone" dataKey="tfidf" fill="red" />
+    <Bar type="monotone" dataKey="GloVe" fill="yellow" />
+    <Bar type="monotone" dataKey="Word2Vec" fill="white" />
+    <Bar type="monotone" dataKey="fastText" fill="purple" />
     </>}
     
     
-  </LineChart> 
+  </BarChart> 
   
   
   

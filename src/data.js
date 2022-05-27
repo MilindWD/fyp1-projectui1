@@ -56,6 +56,7 @@ const getData = (model, dataset, attribute) => {
             if(data[i].attribute===attribute&&data[i].model===model) {
                 for(let j=0;j<3;j++) {
                     if(temp[j].name===data[i].dataset) {
+                        if(data[i].embedding)
                         temp[j][data[i].embedding] = data[i].value;
                     }
                 }
