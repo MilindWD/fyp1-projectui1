@@ -48,7 +48,7 @@ export default function App() {
     <Container style={{alignItems: 'center'}}>
     <Container>
       <div style={{textAlign: 'center', padding: '1%', color: '#FFF205', fontFamily: 'Outfit'}}>
-        <h1 style={{fontSize: '3rem', fontWeight: '800'}}>Analysis of Political Commentary using Social Media
+        <h1 style={{fontSize: '3rem', fontWeight: '800'}}>Impact of Word embedding on Text Classification 
         </h1>
       </div>
       <div style={{textAlign: 'center', padding: '1%', color: '#FFF205', fontFamily: 'Outfit', fontSize: '1.5rem'}}>
